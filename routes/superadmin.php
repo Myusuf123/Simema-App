@@ -23,6 +23,9 @@ Route::prefix('superadmin')->middleware('auth')->name('superadmin.')->group(func
         return view('auth.login');
     })->middleware('guest');
 
+    Route::get('/dashboard', [FoodmenuController::class, 'dashboard'])
+        ->name('admin.dashboard');
+
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->middleware(['auth'])->name('dashboard');

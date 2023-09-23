@@ -25,6 +25,12 @@ class FoodmenuController extends Controller
         $foods = Foodmenu::all();
         return view('admin.index', compact('foods', 'title'));
     }
+    public function dashboard()
+    {
+        $title = 'Daftar Makanan & Minuman';
+        $foods = Foodmenu::all();
+        return view('admin.dashboard', compact('foods', 'title'));
+    }
 
     public function menu_makanan()
     {

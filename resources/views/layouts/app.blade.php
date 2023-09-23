@@ -109,6 +109,14 @@
                with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
+                            <a href="{{route('dashboard')}}" class="nav-link  {{ request()->is('dashboard') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-book"></i>
+                                <p>
+                                    Dashboard Admin
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('superadmin.menu.index')}}" class="nav-link  {{ request()->is('superadmin/menu*') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-book"></i>
                                 <p>
