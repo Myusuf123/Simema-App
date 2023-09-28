@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Foodmenu;
-use Illuminate\Http\Request;
-use Alert;
 use File;
+use Alert;
+
+use App\Models\Foodmenu;
+use App\Models\Transaksi;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class FoodmenuController extends Controller
 {
@@ -27,9 +31,14 @@ class FoodmenuController extends Controller
     }
     public function dashboard()
     {
-        $title = 'Daftar Makanan & Minuman';
+
+        $bulan = Carbon::now()->format('m');
+        $hari = date('Y-m-d');
+        $penghasilan_perbulan = Transaksi::whereMonth('created_at', '=', $bulan)->sum('total_harga');
+        $penghasilan_perhari = Transaksi::where('tanggal_transaksi', $hari)->sum('total_harga');
+        $title = 'Dashboard Admin';
         $foods = Foodmenu::all();
-        return view('admin.dashboard', compact('foods', 'title'));
+        return view('admin.dashboard', compact('foods', 'title', 'penghasilan_perbulan', 'penghasilan_perhari'));
     }
 
     public function menu_makanan()
@@ -39,10 +48,25 @@ class FoodmenuController extends Controller
         // dd($foods);
         return view('customer.index', compact('foods', 'title'));
     }
+
     public function menu_minuman()
     {
         $title = 'Daftar Minuman Dapur Rempong';
         $foods = Foodmenu::where('food_jenis', 'Minuman')->get();
+        // dd($foods);
+        return view('customer.index', compact('foods', 'title'));
+    }
+    public function menu_cemilan()
+    {
+        $title = 'Daftar Cemilan Dapur Rempong';
+        $foods = Foodmenu::where('food_jenis', 'Cemilan')->get();
+        // dd($foods);
+        return view('customer.index', compact('foods', 'title'));
+    }
+    public function menu_catering()
+    {
+        $title = 'Daftar Catering Dapur Rempong';
+        $foods = Foodmenu::where('food_jenis', 'Catering')->get();
         // dd($foods);
         return view('customer.index', compact('foods', 'title'));
     }

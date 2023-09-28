@@ -16,7 +16,7 @@ class CreateFoodmenusTable extends Migration
         Schema::create('foodmenus', function (Blueprint $table) {
             $table->id();
             $table->string('food_name');
-            $table->enum('food_jenis', ['Makanan', 'Minuman']);
+            $table->enum('food_jenis', ['Makanan', 'Minuman', 'Cemilan', 'Catering']);
             $table->string('foto');
             $table->string('deskripsi');
             $table->integer('harga');

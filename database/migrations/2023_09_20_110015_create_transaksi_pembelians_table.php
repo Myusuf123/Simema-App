@@ -15,6 +15,10 @@ class CreateTransaksiPembeliansTable extends Migration
     {
         Schema::create('transaksi_pembelians', function (Blueprint $table) {
             $table->id();
+            $table->integer('kode_transaksi_id');
+            $table->integer('foodmenu_id');
+            $table->integer('jumlah_pesanan');
+            $table->integer('total_harga');
             $table->timestamps();
         });
     }

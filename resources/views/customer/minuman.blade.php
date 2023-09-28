@@ -35,7 +35,7 @@
                     @endphp
                     <div class="col">
                         <div class="card">
-                            <img src="{{ asset('img/'.$food->foto)}}" alt="" class="card-img-top">
+                            <img src="{{ asset('img/'.$food->foto)}}" alt="" class="card-img-top" height="400" width="200">
                             <div class="card-body">
                                 <h2>
                                     {{$food->food_name}}

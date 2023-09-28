@@ -142,13 +142,22 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../gallery.html" class="nav-link">
+                            <a href="{{route('customer.menu_cemilan')}}" class="nav-link  {{ request()->is('customer/daftar_cemilan*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-pizza-slice"></i>
                                 <p>
-                                    Transaksi Makanan
+                                    Daftar Cemilan
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{route('customer.menu_catering')}}" class="nav-link  {{ request()->is('customer/daftar_catering*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-pizza-slice"></i>
+                                <p>
+                                    Daftar Catering
+                                </p>
+                            </a>
+                        </li>
+
 
                         {{-- contoh dropdown menu --}}
                         {{-- <li class="nav-item menu-open">

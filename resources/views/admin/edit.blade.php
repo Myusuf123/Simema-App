@@ -55,12 +55,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group ">
                                         <label>Jenis</label>
-                                        <select name="jenis" id="jenis" class="select2 form-control">
+                                        <select name="jenis" id="jenis" class="form-control">
 
                                             <option selected disabled>-- Pilih Jenis Makanan --
                                             </option>
                                             <option value="Makanan" @if ($foods->food_jenis=='Makanan') selected @endif>Makanan</option>
                                             <option value="Minuman" @if ($foods->food_jenis=='Minuman') selected @endif>Minuman</option>
+                                            <option value="Cemilan" @if ($foods->food_jenis=='Cemilan') selected @endif>Cemilan</option>
+                                            <option value="Catering" @if ($foods->food_jenis=='Catering') selected @endif>Catering</option>
 
                                         </select>
                                     </div>
@@ -107,7 +109,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group ">
                                         <label>Status</label>
-                                        <select name="status" id="status" class="select2 form-control">
+                                        <select name="status" id="status" class="form-control">
 
                                             <option selected disabled>-- Pilih Jenis Status --
                                             </option>

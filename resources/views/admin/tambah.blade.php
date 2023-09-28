@@ -59,6 +59,8 @@
                                             </option>
                                             <option value="Makanan">Makanan</option>
                                             <option value="Minuman">Minuman</option>
+                                            <option value="Cemilan">Cemilan</option>
+                                            <option value="Catering">Catering</option>
 
                                         </select>
                                     </div>

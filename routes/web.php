@@ -20,7 +20,10 @@ Route::prefix('customer')->group(function () {
         ->name('customer.menu_makanan');
     Route::get('/daftar_minuman', [FoodmenuController::class, 'menu_minuman'])
         ->name('customer.menu_minuman');
-    Route::resource('formasi', FormasiController::class)->except('show');
+    Route::get('/daftar_cemilan', [FoodmenuController::class, 'menu_cemilan'])
+        ->name('customer.menu_cemilan');
+    Route::get('/daftar_catering', [FoodmenuController::class, 'menu_catering'])
+        ->name('customer.menu_catering');
 });
 
 Route::get('/', function () {

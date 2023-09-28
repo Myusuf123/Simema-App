@@ -64,6 +64,12 @@
                                 </td>
 
                                 <td style="width: 25%">
+                                    @if ($transaksi->status == 'Selesai')
+                                    <a href="{{ route('superadmin.cetak_struk', $transaksi->id) }}" target="_blank" class="btn btn-warning btn-sm"> <i class="fas fa-print"></i>
+                                    </a>
+
+                                    @endif
+
                                     <x-button-edit-pesanan href="{{ route('superadmin.transaksi.edit', $transaksi->id) }}" />
                                     <x-button-delete-pesanan action="{{ route('superadmin.transaksi.destroy', $transaksi->id)}}">
                                         </x-button-delete>

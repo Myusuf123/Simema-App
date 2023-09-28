@@ -1,0 +1,1 @@
+<a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit"></i></a>
